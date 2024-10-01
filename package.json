@@ -1,0 +1,20 @@
+{
+  "name": "fullstackopenosa3",
+  "version": "1.0.0",
+  "description": "Fullstackopen kurssin osa3",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rikulauttia/FullstackopenOsa3.git"
+  },
+  "author": "Riku Lauttia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rikulauttia/FullstackopenOsa3/issues"
+  },
+  "homepage": "https://github.com/rikulauttia/FullstackopenOsa3#readme"
+}
