@@ -1,7 +1,7 @@
 {
   "name": "FullstackopenOsa3",
   "version": "1.0.0",
-  "description": "Fullstackopen kurssin osa3",
+  "description": "Fullstackopen course part3. [https://fullstackopen.com/]",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
