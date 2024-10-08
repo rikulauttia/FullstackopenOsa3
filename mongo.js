@@ -7,14 +7,14 @@ if (process.argv.length < 3) {
 
 const password = process.argv[2];
 
-const url = `mongodb+srv://fullstack:${password}@cluster0.o1opl.mongodb.net/?retryWrites=true&w=majority`;
+const url = `mongodb+srv://fullstack:<db_password>@fullstackopenosa3.ntpiu.mongodb.net/?retryWrites=true&w=majority&appName=FullstackopenOsa3`;
 
 mongoose.set("strictQuery", false);
 mongoose.connect(url);
 
-const noteSchema = new mongoose.Schema({
-  content: String,
-  important: Boolean,
+const personSchema = new mongoose.Schema({
+  name: String,
+  number: String,
 });
 
 const Person = mongoose.model("Person", personSchema);
