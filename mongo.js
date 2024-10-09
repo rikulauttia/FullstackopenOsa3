@@ -6,6 +6,8 @@ if (process.argv.length < 3) {
 }
 
 const password = process.argv[2];
+const name = process.argv[3];
+const number = process.argv[4];
 
 const url = `mongodb+srv://fullstack:${password}@fullstackopenosa3.ntpiu.mongodb.net/puhelinluetteloApp?retryWrites=true&w=majority&appName=FullstackopenOsa3`;
 
@@ -19,12 +21,21 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model("Person", personSchema);
 
-const person = new Person({
-  name: "Matti Meikäläinen",
-  number: "04073773729",
-});
-
-person.save().then((result) => {
-  console.log("person saved!");
-  mongoose.connection.close();
-});
+if (process.argv.length === 5) {
+  const person = new Person({
+    name: name,
+    number: number,
+  });
+  person.save().then(() => {
+    console.log(`added ${name} number ${number} to phonebook!`);
+    mongoose.connection.close();
+  });
+} else if (process.argv.length === 3) {
+  Person.find({}).then((result) => {
+    console.log("Phonebook:");
+    result.forEach((person) => {
+      console.log(`${person.name} ${person.number}`);
+    });
+    mongoose.connection.close();
+  });
+}
