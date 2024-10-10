@@ -80,7 +80,7 @@ app.get("/info", (request, response, next) => {
   Person.find({})
     .then((persons) => {
       response.send(
-        `<p>Phonebook has info for ${persons.length} people</p>
+        `<p>Phonebook has info for ${persons.length} people.</p>
         <p>${new Date()}</p>`
       );
     })
