@@ -82,7 +82,7 @@ app.get("/info", (req, res, next) => {
 app.use((error, request, response, next) => {
   console.error(error.message);
   if (error.name === "CastError" && error.kind === "ObjectId") {
-    return response.status(400).send({ error: "malformatted id" });
+    return response.status(400).send({ error: "Malformatted id" });
   }
   next(error);
 });
