@@ -36,10 +36,10 @@ app.get("/api/persons/:id", (request, response, next) => {
     .catch((error) => next(error));
 });
 
-app.delete("/api/persons/:id", (request, response, next) => {
-  Person.findByIdAndRemove(request.params.id)
-    .then(() => {
-      response.status(204).end();
+app.delete("/api/persons/:id", (req, res, next) => {
+  Person.findByIdAndRemove(req.params.id)
+    .then((result) => {
+      res.status(204).end();
     })
     .catch((error) => next(error));
 });
